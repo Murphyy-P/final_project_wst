@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Paolo WebFolio
+        </title>
+        <style>
+            body{
+                color: white;
+                margin: 0px;
+                background-color: black;
+                font-family: THICCCBOI;
+            }
+            html{
+                scroll-behavior: smooth;
+            }
+            header{
+                display: flex;
+                position: fixed;
+                width: 100%;
+                height: 140px;    
+                background-color: black;
+                z-index: 1000000;
+            }
+            .main-body{ 
+                height: 3500px;
+                width: 100%;
+            }
+            .left-header{
+                display: flex;
+                flex: 1;
+                align-items: center;
+                justify-content: left;
+                padding-left: 100px;
+            }
+            .image{
+                width: 130px;
+                padding-left: 20px;
+            }
+            .right-header{
+                display: flex;
+                flex: 1;
+                align-items: center;
+                justify-content: right;
+                padding-right: 100px;
+            }
+            .links{
+                color: white;
+                text-decoration: none;
+                font-size: 18px;
+                font-weight: lighter;
+                margin-right: 45px;
+                margin-left: 45px;
+                padding: 5px;
+                border-radius: 10px;
+                transition: 0.3s ease-in-out;
+            }
+            
+            .links:hover{   
+                background: white;
+                border-radius: 10px;
+                color: black;
+                padding: 15px;
+                font-size: 140%;
+                transition: 0.3s ease-in-out;
+            }
+            .left-body{
+                display: flex;
+                flex: 1;
+                align-items: center;
+                justify-content: center;
+                
+            }
+            .right-body{
+                display: flex;
+                flex: 1;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                margin-right: 200px;
+                padding-left: 60px;
+            }
+            .profile{
+                align-items: center;
+                justify-content: center;
+                width: 900px;
+            }
+            .aboutme{
+                font-family: thicccboi;
+                font-weight: 600;
+                font-size: 65px;
+                margin: 0px;
+            }
+            .aboutmecontent{
+                font-family: thicccboi;
+                text-indent: 30px;
+            }
+            .bodycontainer{
+                padding-top: 140px;
+                display: flex;
+                flex: 1;
+                height: 600px;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                padding-bottom: 120px;
+                
+            }
+            .homeweb{
+                font-size: 200px;
+                transition: 0.3s ease-in-out;
+
+            }
+
+            .homeweb:hover{
+                font-size: 300px;
+                transition: 0.3s ease-in-out;
+                text-shadow: 0px 0px 40px white;
+            }
+
+            .skills-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centers the skill cards horizontally */
+    align-items: center; /* Aligns the skill cards vertically */
+    flex-wrap: wrap; /* Allows cards to wrap to next line if there's not enough space */
+}
+
+.container {
+    margin: 10px; /* Adds some space around each skill card */
+    width: auto; /* Adjust this as needed */
+}
+
+            .container .card
+            {
+            position:relative;
+            width:250px;
+            background:linear-gradient(0deg,#1b1b1b,#222,#1b1b1b);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:300px;
+            border-radius:4px;
+            text-align:center;
+            overflow:hidden;
+            transition:0.5s;
+            }
+            .container .card:hover
+            {
+            transform:translateY(-10px);
+            box-shadow:0 15px 35px rgba(0,0,0,.5);
+            }
+            .container .card:before
+            {
+            content:'';
+            position:absolute;
+            top:0;
+            left:-50%;
+            width:100%;
+            height:100%;
+            background:rgba(255,255,255,.03);
+            pointer-events:none;
+            z-index:1;
+            }
+            .percent
+            {
+            position:relative;
+            width:150px;
+            height:150px;
+            border-radius:50%;
+            box-shadow: inset 0 0 50px #000;
+            background:#222;
+            z-index:1000;
+            }
+            .percent .num
+            {
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            border-radius:50%;
+            }
+            .percent .num h2
+            {
+            color:#777;
+            font-weight:700;
+            font-size:40px;
+            transition:0.5s;
+            }
+            .card:hover .percent .num h2
+            {
+            color:#fff;
+            font-size:60px;
+            }
+            .percent .num h2 span
+            {
+            color:#777;
+            font-size:24px;
+            transition:0.5s;
+            }
+            .card:hover .percent .num h2 span
+            {
+            color:#fff;
+            }
+            .text
+            {
+            position:relative;
+            color:#777;
+            margin-top:20px;
+            font-weight:700;
+            font-size:18px;
+            letter-spacing:1px;
+            text-transform:uppercase;
+            transition:0.5s;
+            }
+            .card:hover .text
+            {
+            color:#fff;
+            }
+            svg
+            {
+            position:relative;
+            width:150px;
+            height:150px;
+            z-index:1000;
+            }
+            svg circle
+            {
+            width:100%;
+            height:100%;
+            fill:none;
+            stroke:#191919;
+            stroke-width:10;
+            stroke-linecap:round;
+            transform:translate(5px,5px);
+            }
+            svg circle:nth-child(2)
+            {
+            stroke-dasharray:440;
+            stroke-dashoffset:440;
+            }
+            .html-skill svg circle:nth-child(2) {
+                stroke-dashoffset: 132; /* 70% for HTML */
+                stroke: #00ff43; /* Color for HTML skill */
+            }
+
+            .js-skill svg circle:nth-child(2) {
+                stroke-dashoffset: 264; /* 40% for JS */
+                stroke: #ffdd00; /* Color for JS skill */
+            }
+
+            .php-skill svg circle:nth-child(2) {
+                stroke-dashoffset: 352; /* 20% for PHP */
+                stroke: #007bff; /* Color for PHP skill */
+            }
+
+            .css-skill svg circle:nth-child(2) {
+                stroke-dashoffset: 176; /* 60% for CSS */
+                stroke: #ff4500; /* Color for CSS skill */
+            }
+
+            .portfolio-box{
+                background-color: #f8f8ff;
+                width: 450px;
+                height: 450px;
+                border-radius: 20px;
+                margin-right: 30px;
+                box-shadow: 0px 0px 30px whitesmoke;
+                overflow: hidden;
+            }
+            .portfolio-box img {
+                width: 100%; 
+                height: 100%;
+                object-fit: cover;
+                border-radius: 20px; 
+                transition: .3s ease-in-out;
+
+            }
+            .portfolio-box img:hover{
+                transform: scale(1.1);
+                transition: .3s ease-in-out;
+            }
+
+            .footer {
+                color: white;
+                text-align: center;
+                padding: 2rem;
+            }
+            .footer_title {
+                font-size: 2rem;
+            }
+    
+            .feedback-input {
+            color:black;
+            font-family: Helvetica, Arial, sans-serif;
+            font-weight:500;
+            font-size: 18px;
+            border-radius: 5px;
+            line-height: 22px;
+            background-color: transparent;
+            border:2px solid black;
+            transition: all 0.3s;
+            padding: 13px;
+            margin-bottom: 15px;
+            width:100%;
+            box-sizing: border-box;
+            outline:0;
+            }
+
+            .contact-box {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: black; /* Change text color for visibility */
+            width: 40%; /* Adjust as needed */
+            margin: 0 auto; /* Center the box */
+            }
+
+            .feedback-input::placeholder {
+                color: black;
+            }
+            .feedback-input:focus { 
+                border:2px solid black; 
+            }
+
+            textarea {
+            height: 150px;
+            line-height: 150%;
+            resize:vertical;
+            }
+
+            [type="submit"] {
+            font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+            width: 100%;
+            background:black;
+            border-radius:5px;
+            border:0;
+            cursor:pointer;
+            color:white;
+            font-size:24px;
+            padding-top:10px;
+            padding-bottom:10px;
+            transition: all 0.3s;
+            margin-top:-4px;
+            font-weight:700;
+            }
+            [type="submit"]:hover { background:#525151; }
+                    
+
+        </style>
+    </head>
+    <body>
+       <!--Header part of the website-->
+       <header>
+            <div class="left-header">
+                <img class="image" src="image/Logo.png">
+            </div>
+            <nav class="right-header">
+                <a class="links" href="#homecontainer">Home</a> 
+                <a class="links" href="#aboutmecontainer">About Me</a> 
+                <a class="links" href="#skillscontainer">Skills</a> 
+                <a class="links" href="#portfoliocontainer">Portfolio</a> 
+                <a class="links" href="#contactcontainer">Contact</a>
+            </nav>
+       </header>
+
+
+       <!--Body part of the website-->
+       <div class="main-body" id="homecontainer">      
+       <!--Home-->
+        <div class="bodycontainer"> 
+            <div class="homeweb">
+                WEBFOLIO
+            </div>
+         </div>
+      
+        <!--About Me-->
+        <div class="bodycontainer" id="aboutmecontainer">     
+            <div class="left-body">
+                <img class="profile" src="image/MePaint.png">
+            </div>
+            <div class="right-body">
+                <p class="aboutme">ABOUT ME</p>
+                <p class="aboutmecontent">I'm Jose Paolo D. Bartolome, a 3rd year student from Bulacan State University. I'm currently taking Bachelor of Science in Information Technology.
+                    On my way to becoming the best version of myself, looking forward that you'll be part of it. </p>
+            </div>
+        </div>  
+        <!--Skills-->
+        <div class="bodycontainer" id="skillscontainer" style="flex-direction: column;">     
+        <p class="aboutme" style="padding-bottom: 100px;"> 
+            SKILLS
+        </p>
+        <div class="skills-container" style="flex-direction: row;">
+            <!--HTML-->
+            <div class="container html-skill">
+                <div class="card">
+                  <div class="box">
+                    <div class="percent">
+                      <svg>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <svg>
+                          <div class="num">
+                            <h2>70<span>%</span></h2>
+                          </div>
+                    </div>
+                        <h2 class="text">Html</h2>
+                  </div>
+                </div>
+              </div>
+            <!--HTML-->
+
+            <!--CSS-->
+              <div class="container css-skill">
+                <div class="card">
+                  <div class="box">
+                    <div class="percent">
+                      <svg>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <svg>
+                          <div class="num">
+                            <h2>60<span>%</span></h2>
+                          </div>
+                    </div>
+                        <h2 class="text">Html</h2>
+                  </div>
+                </div>
+              </div>
+            <!--CSS-->
+
+            <!--JS-->
+              <div class="container js-skill">
+                <div class="card">
+                  <div class="box">
+                    <div class="percent">
+                      <svg>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <svg>
+                          <div class="num">
+                            <h2>40<span>%</span></h2>
+                          </div>
+                    </div>
+                        <h2 class="text">Html</h2>
+                  </div>
+                </div>
+              </div>
+            <!--JS-->
+
+            <!--PHP-->
+              <div class="container php-skill">
+                <div class="card">
+                  <div class="box">
+                    <div class="percent">
+                      <svg>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <svg>
+                          <div class="num">
+                            <h2>20<span>%</span></h2>
+                          </div>
+                    </div>
+                        <h2 class="text">Html</h2>
+                  </div>
+                </div>
+              </div>
+            <!--PHP-->
+
+        </div>
+        </div>  
+        <!--Portfolio-->
+        <div class="bodycontainer" id="portfoliocontainer" style="flex-direction: column;">     
+            <p class="aboutme" style="padding-bottom: 100px;"> 
+                PORTFOLIO
+            </p> 
+
+            <div style="display: flex;">
+            <div class="portfolio-box">
+                <img src="image/CRUD.png" style="padding-left: 20px;">
+            </div>
+            <div class="portfolio-box">
+                <img src="image/FL.png">
+            </div>
+             </div>
+
+        </div>
+
+        <!--Contact-->
+      <!--Contact-->
+<div class="bodycontainer" id="contactcontainer" style="flex-direction: column;">  
+    <p class="aboutme" style="padding-bottom: 100px;"> 
+        CONTACT
+    </p> 
+    <div class="contact-box">   
+        <form>      
+            <input name="name" type="text" class="feedback-input" placeholder="Name" />   
+            <input name="email" type="text" class="feedback-input" placeholder="Email" />
+            <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
+            <input type="submit" value="SUBMIT"/>
+        </form>
+    </div>
+</div>
+
+    <!--FOOTER-->
+    <footer class="footer">
+        <p class="footer_title">Jose Paolo D. Bartolome</p>
+        <div class="footer_social">
+        </div>
+        <p class="footer__copy">&#169; All rights reserved</p>
+    </footer>
+    </body>
+
+
+</html>
